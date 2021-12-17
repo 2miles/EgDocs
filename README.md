@@ -1,3 +1,3 @@
 # EgDocs
 ## personal technical documentation
-Just a place to keep notes and learn HTML, CSS
+A place to keep notes for projects. Im also using these notes to learn HTML, CSS:
