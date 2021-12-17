@@ -1,0 +1,968 @@
+<!-- 
+    TODO:
+    . Finish inputing all the data, then fix all the typos.
+       -Add the Game statistics table
+    . Add a subsection-body class to wrap the non-header parts of the subsections
+    . Add 'scraping for ArcOS' as a scraping-subsection
+    . Write down somewhere the notaion i used tor the right arrow.
+    . Change the Important Directoris data from a <ul> to a <dd> <dl> sequence
+        and add definitions for the addresses
+
+    I lest off last about to add the "Adding consoles" part on line 112 of pi.md
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" type= "text/css" href="../egdoc_style.css">
+    </head>
+<body>
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                    <div class="header" >
+                        <h1>Egpan Retropie Docs</h1>
+                        <p>
+                            Seriously, read this instead. It's all here in the top left menu:
+                            <a href="https://retropie.org.uk/docs/">RetroPie-Docs</a> 
+                        </p>
+                    </div>
+                <nav class="topnav" id="navbar">
+                    <a href="#button_config" class="nav-link">
+                        Button Configuration.
+                    </a>
+                    <a href="#controllers" class="nav-link">
+                        Controllers
+                    </a>
+                    <a href="#sd_cards" class="nav-link">
+                        SD-cards
+                    </a>
+                    <a href="#adding_removing_games" class="nav-link">
+                        Adding/Removing Games
+                    </a>
+                    <a href="#scraping_metadata" class="nav-link">
+                        Scraping & Metadata
+                    </a>
+                    <a href="#ssh" class="nav-link">
+                        SSH
+                    </a>
+                    <a href="#overclocking" class="nav-link">
+                        Overclocking
+                    </a>
+                    <a href="#kodi" class="nav-link">
+                        Kodi
+                    </a>
+                    <a href="#important_directories" class="nav-link">
+                        Directories
+                    </a>
+                    <a href="#collection_statistics" class="nav-link">
+                        Collection Stats
+                    </a>
+                    <a href="#definitions" class="nav-link">
+                        Definitions
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <main id="main-doc">
+                <div class="card">
+                    <section class="main-section" id="button_config">
+                        <div class="section-header">
+                            <h2>Button Configuration</h2>
+                        </div>
+                        <div class="subsection-header">
+                            <h3>RetroArc In-game Bindings</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Key Combo</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>Meta + START</td>
+                                <td>Exit</td>
+                            </tr>
+                            <tr>
+                                <td>Meta + RS</td>
+                                <td>Save</td>
+                            </tr>
+                            <tr>
+                                <td>Meta + LS</td>
+                                <td>Load</td>
+                            </tr>
+                            <tr>
+                                <td>Meta + RIGHT</td>
+                                <td>change save</td>
+                            </tr>
+                            <tr>
+                                <td>Meta + LEFT</td>
+                                <td>change save</td>
+                            </tr>
+                            <tr>
+                                <td>Meta + X</td>
+                                <td>RetroArch menu</td>
+                            </tr>
+                            <tr>
+                                <td>meta + B</td>
+                                <td>Reset</td>
+                            </tr>
+                        </table>
+                        <div class="subsection-header">
+                            <h3>EmulationStation Bindings</h3>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Key Combo</th>
+                                <th>Action</th>
+                            </tr>
+                            <tr>
+                                <td>UP</td>
+                                <td>previous </td>
+                            </tr>
+                            <tr>
+                                <td>DOWN</td>
+                                <td>next </td>
+                            </tr>
+                            <tr>
+                                <td>LEFT</td>
+                                <td>Previous console</td>
+                            </tr>
+                            <tr>
+                                <td>RIGHT</td>
+                                <td>next console</td>
+                            </tr>
+                            <tr>
+                                <td>START</td>
+                                <td>Main menu</td>
+                            </tr>
+                            <tr>
+                                <td>SELECT</td>
+                                <td>List Options</td>
+                            </tr>
+                            <tr>
+                                <td>A</td>
+                                <td>Enter/Play</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                                <td>Back</td>
+                            </tr>
+                            <tr>
+                                <td>X</td>
+                                <td>Random Game/Item</td>
+                            </tr>
+                            <tr>
+                                <td>Y</td>
+                                <td>Enter/Play</td>
+                            </tr>
+                            <tr>
+                                <td>LS</td>
+                                <td>Previous page</td>
+                            </tr>
+                            <tr>
+                                <td>RS</td>
+                                <td>Next page</td>
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="controllers">
+                        <h2></h2>
+                        <div class="section-header">
+                            <h2>Controllers</h2>
+                        </div>
+                        <div class="subssection-header">
+                            <h3>Controller Setup</h3>
+                        </div>
+                        <p>
+                            Dont listen to me, go here for initial configuration:
+                            <a href="https://retropie.org.uk/docs/Controller-Configuration/">Offical Controller Docs.</a> 
+                        </p>
+                        <p>
+                            Set up a default mapping for each controller (using ES).
+                            <div class="subsection-directions">
+                                start -> configure input -> yes -> 
+                            </div>
+
+                            Then we can custom map that controller for each different console (using RA in-game menu).
+                            This only has to done for one game of a system to apply to all games of that system
+                            with that controller. Once that controller has been mapped to a console it will be remembered.
+                        </p>
+                        <ol>
+                            <li>
+                                Set up a default EmulationStation mapping for each controller.
+                            </li>
+                            <li>
+                                Map that controller (using in-game RetroArc menu) to any console we want to use it with.
+                            </li>
+                        </ol>
+                        <div class="subssection-header">
+                            <h3>Switch A/B in EmulationStation</h3>
+                        </div>
+                        <div class="subsection-directions">
+                            RetroPie -> rpsetup -> manage packages -> 
+                            manage core packages -> emulation station -> configuration 
+                            -> swap A/B
+                        </div>
+                        <div class="subssection-header">
+                            <h3>PS1 main mapping</h3>
+                            <p>This works good for most everything byt N64</p>
+                        </div>
+                        <table>
+                            <tr>
+                                <th> ES </th>
+                                <th> Controller </th>
+                            </tr>
+                            <tr>
+                                <td> A </td>
+                                <td> Circle (2) </td>
+                            </tr>
+                            <tr>
+                                <td> B </td>
+                                <td> Cross (3) </td>
+                            </tr>
+                            <tr>
+                                <td> X </td>
+                                <td> Triangle (1) </td>
+                            </tr>
+                            <tr>
+                                <td> Y </td>
+                                <td> Square(4) </td>
+                            </tr>
+                        </table>
+                        <div class="subssection-header">
+                            <h3>
+                                PS1 controller to N64 
+                            </h3>
+                        </div>
+                        <p>
+                            This needs to be done in the RetroArch menu in-game.
+                            To set a button you must hold A between each binding.
+                        </p>
+                        <div class="subsection-directions">
+                                Meta+X &#8594 back &#8594 settings &#8594 input &#8594 port 1 binds &#8594 
+                        </div>
+                        <table>
+                            <tr>
+                                <th> N64 </th>
+                                <th> PS1(main) </th>
+                            </tr>
+                            <tr>
+                                <td> A </td>
+                                <td> Cross (3) </td>
+                            </tr>
+                            <tr>
+                                <td> B </td>
+                                <td> Square (3) </td>
+                            </tr>
+                            <tr>
+                                <td> X </td>
+                                <td> none </td>
+                            </tr>
+                            <tr>
+                                <td> Y </td>
+                                <td> none </td>
+                            </tr>
+                            <tr>
+                                <td> Z </td>
+                                <td> LT </td>
+                            </tr>
+                            <tr>
+                                <td> cx(c.right) </td>
+                                <td> Circle(2) </td>
+                            </tr>
+                            <tr>
+                                <td> cx(c.left) </td>
+                                <td> Triangle(1) </td>
+                            </tr>
+                            <tr>
+                                <td> cy(c.down) </td>
+                                <td> RB </td>
+                            </tr>
+                            <tr>
+                                <td> cy(c.up) </td>
+                                <td> RT </td>
+                            </tr>
+                            <tr>
+                                <td> Meta </td>
+                                <td> SELECT </td>
+                            </tr>
+                        </table>
+                        <p>Dont forget to Save the autoconfig!</p>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="sd_cards">
+                        <div class="section-header">
+                            <h2>SD-cards</h2>
+                        </div>
+                        <div class="subsection-header">
+                            <h3>Copying an SD-card</h3>
+                        </div>
+                        <p>
+                            I did this on a Mac using ApplePi Baker.
+                            All the infor for the application can be found here:
+                            <a href="https://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/">ApplePi-Baker</a>
+                        </p>
+                        <p>This is the tutorial I followed
+                            <a href="www.youtube.com/watch?v=VWRpCWSceo">El tutorial</a>
+                        </p>
+                        <p>Using ApplePi Baker:</p>
+                        <div class="subsection-header">
+                            <h4>Copying a SD to an External HD as a .img</h4> 
+                        </div>
+                        <ol>
+                            <li> Choose the SD card form the leftmost box </li>
+                            <li> Choose BACKUP, the middle box <em>(Image to file)</em> </li>
+                            <li> Choose the HD drive to copy to </li>
+                            <li> Name the file backupBlaBla.img </li>
+                            <li> Choose ISO filetype </li>
+                            <li> Click Start </li>
+                        </ol>
+                        <div class="subsection-header">
+                            <h4>Copying a .img in a HD to a SD card.</h4>
+                        </div>
+                        <ol>
+                            <li>
+                                Choose the SD card from the leftmost box
+                            </li>
+                            <li>
+                                Choose the RESTORE, the rightmost box <em>(file -> image)</em>
+                            </li>
+                            <li>
+                                Choose the filename form the HD
+                            </li>
+                            <li>
+                                Click Start.
+                            </li>
+                        </ol>
+
+
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="adding_removing_games">
+                        <div class="section-header">
+                            <h2> Adding & Removing Games </h2>
+                        </div>
+                        <div class ="subsection-header">
+                            <h3>
+                                Adding games with USB stick
+                            </h3>
+                        </div>
+                        <p> 
+                            This is the archaic method. It is faster than over wifi though.
+                        </p>
+                        <ol>
+                            <li>
+                                Make sure you have a USB stick ready to transfer games.
+                                <ol>
+                                    <li>
+                                        Stick a USB stick into  Just drag and drop the ROMS into the USB
+                                    </li>
+                                    <li>
+                                        Format any empty USB stick to FAT32, and make an empty folder called 'retropie'
+                                    </li>
+                                    <li>
+                                        Plug that USB into the Pi.
+                                        Wait a minute, and it will populate the retropie folder with a few sub-folders.
+                                        Plug it back into the computer.
+                                    </li>
+                                    <li>
+                                        Now go into the newly created roms folder in the retropie folder. 
+                                        Inside it will be a list of folders, one for each console.
+                                        This is where we can drag and drop games.
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                Insert USB into computer and drag the ROMS into the corrisponding console folder in 
+                                retropie/roms/console. Wait a little for them to transfer. Now the games are on the stick.
+                            </li>
+                            <li>
+                                Insert USB stick into the Pi, top left slot is best I think. Wait a few mins for the games 
+                                to transfer and now you can unplug the stick from the Pi.
+                                (note:) the USB only adds games to the Pi. So you are free to delete the games on the USB and 
+                                plug it back into the Pi and it wont remove games from the Pi.
+                            </li>
+                        </ol>
+                        <div class ="subsection-header">
+                            <h3>
+                                Adding/removing using SSH over wifi
+                            </h3>
+                        </div>
+                        <p>
+                            This method is the slowest but by far the most convenient and easiest on the hardware. As long as the Pi is on and you're on the same
+                            wifi then you can transfer remotely wich is really convenient. You can even 
+                            play it while it is transfering.
+                        </p>
+                        <ol>
+                            <li>
+                                If you havent already done it yet, SSH must be enabled on the Pi.
+                                You can see how to do that here: 
+                                <a href="#ssh"> Enable SSH on Pi</a>
+                            </li>
+                            <li>
+                                Get a program that can use SSH and open it up. I like FileZilla.
+                            </li>
+                            <li>
+                                Enter the connection info in the fields in the top bar.
+                                You'll need the address, user name, and password of the Pi, and 
+                                the port number, which is 22. Go here on how to get that info 
+                                <a href="#ssh"> SSH and wifi</a>
+                            </li>
+                            <li>
+                                The left side will be your computer file tree, the right side, when 
+                                connected, will be the Pi's file tree.
+                            </li>
+                            <li>
+                                To add, you just drag and drop the files from your computer to the correct location 
+                                on the Pi:
+                                <div class="subsection-directions">
+                                    /opt/retropie/roms/consoleName/ 
+                                </div>
+                                To remove, you just click on the game in the Pi and delete it.
+                            </li>
+                            <li>
+                                When the upload is complete, restart the Pi and you're good to go.
+                            </li>
+                        </ol>
+                        <div class ="subsection-header">
+                            <h3>
+                                Adding/removing using the SD-card
+                            </h3>
+                        </div>
+                        <p> 
+                            This method is the fastest and most direct method. We take the SD out of the Pi and 
+                            insert it directly into the computer. Since computers dont usualy take micro-SD cards 
+                            this requires either a USB to microSD converter or a microSD to SD converter, depending 
+                            on what ports your computer has.
+                        </p>
+                        <ol>
+                            <li>
+                                Remove micro-SD card from Pi and insert it into the computer.
+                            </li>
+                            <li>
+                                To add, just drag the games from the computer directly into 
+                                <br> /opt/retropie/roms/consoleName/ 
+                                <br>
+                                To remove, just click on the games to delete them.
+                            </li>
+                            <li>
+                                Eject the SD card and put it back into the Pi. Now you are good.
+                            </li>
+                        </ol>
+
+                        <div class ="subsection-header">
+                            <h3>
+                                Adding consoles to EmulationStation
+                            </h3>
+                            <p>
+                                If the emulator is not already in the roms list, then create the required rom folder
+                                name. The name must match exactly. You can find the emulator names here, just Click
+                                on the dropdown menu and got to emulators, here you visit the page of you rsystem to find 
+                                the shorthand name.
+                            </p>
+                            <ol>
+                                <li>
+                                    Create required short-hand rom folder, put it with other rom folders.
+                                </li>
+                                <li>
+                                    Downliad the required emulator:
+                                    <div class="subsection-directions"">
+                                        RetroPie &#8594 rpsetup &#8594  manage packages &#8594 manage optional packages &#8594  
+                                        choose emulator from the list.
+                                    </div>
+                                </li>
+                                <li>
+                                    Choose download form source
+                                </li>
+                                <li>
+                                    put roms into the new rom folder, if you want any games..
+                                </li>
+                                <li>
+                                    Runscraper on the new rom folder for console meta-data:
+                                    <br>
+                                    <a href="#scraping_metadata">scraping</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="scraping_metadata">
+                        <div class="section-header">
+                            <h2>Scraping & Metadata</h2>
+                            <p>
+                                When the scraper looks fro metadata(images, etc..) it checks for the gamelist.xml file in 
+                                <br>
+                                <div class="subsection-directions">
+                                    /opt/retropie/config/all/emulationstation/gamelist/consoleName/
+                                </div>
+                                <br>
+                                If it is not there then it will create one. The scraper places the images it finds into:
+                                <br>
+                                <div class="subsection-directions">
+                                    /opt/retropie/config/all/emulationstation/downloaded_images/consoleName/
+                                </div>
+                            </p>
+                            <ul>
+                                <li>
+                                    Make sure there are no other gamelist.xml files lay8ing aroud, that will mess things up.
+                                </li>
+                                <li>
+                                    If the scraper is no working just wait a few hours/days. It goes down form time to time.
+                                    Plus, I think there may be a daily scrape limit.
+                                </li>
+                            </ul>
+                           <div class="subsection-header">
+                               <h3>
+                                   Scraping with EmulationStation
+                               </h3>
+                               <p>
+                                   Access the scraper from the EmulationStation menu.
+                                   <div class="subsection-directions">
+                                        Start &#8594 scraper &#8594  use screenscraper &#8594  scrape now &#8594 select systems, 
+                                        choose missing images, &#8594 back &#8594 user decides conficts: no &#8594 then scrape
+                                   </div>
+                               </p>
+                           </div> 
+                           
+                        </div>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="ssh">
+                        <div class="section-header">
+                            <h2>SSH</h2>
+                        </div>
+                        <p>
+                            SSH must first be enables on the Pi:
+                            <div class="subsection-directions">
+                                retropie &#8594 raspiconfig &#8594 Interface Options &#8594 SSH &#8594 
+                                yes &#8594 back &#8594 rpsetup &#8594 perform reboot
+                            </div>
+                        </p>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="overclocking">
+                        <div class="section-header">
+                        <h2>Overclocking</h2>
+                        </div>
+                        <p>
+                            For my 8gb pi, I appended the text below to 
+                            <div class="subsection-directions">
+                                /boot/config.txt
+                            </div>
+                            <div class="subsection-directions">
+                                over_voltage=8 <br>
+                                arm_freq=2147 <br>
+                                gpu_freq=750
+                            </div>
+                        </p>
+                        <div>
+
+                        </div>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="kodi">
+                        <div class="section-header">
+                            <h2>Kodi</h2>
+                        </div>
+                        <p>
+                            First we need to set this to allow add-ons:
+                            <div class="subsection-directions">
+                                Kodi &#8594 settings &#8594 addons &#8594 set unknown sources to YES 
+                            </div>
+                            For more addons:
+                            <div class="subsection-directions">
+                                Kodi &#8594 settings &#8594 addons &#8594 from repository
+                                &#8594 all repositories &#8594 video addons 
+                            </div>
+                        </p>
+                        <div class="subsection-header">
+                            <h3> Adding a new add-on </h3>
+                        </div>
+                        <p>
+                            All of the add-ons from the following troypoint site follow the sma formula.
+                            The algorithm written below for CuriosityStream will work for any of their
+                            URLs without much tweaking, other than the obvious.
+                        </p>
+                        <a href="https://troypoint.com/curiositystream-kodi-addon/">https://troypoint.com/curiositystream-kodi-addon/</a>
+                        <br>
+                        <a href="https://troypoint.com/crew-kodi-addon/">https://troypoint.com/crew-kodi-addon/</a>
+                        <div class="subsection-header">
+                           <h3>
+                               CuriosityStream Add-on Example
+                           </h3> 
+                        </div>
+                        <p>
+                            <div class="subsection-directions">
+                                Settings &#8594 system &#8594 File manager &#8594 add source &#8594 
+                                none &#8594 type the URL, click ok &#8594 highlight box under source and name it 
+                                &#8594 ok
+                            </div>
+                            <div class="subsection-directions">
+                                Go back to systems screen &#8594 addons &#8594  install form zip File
+                                Select name &#8594 select zip &#8594 Wait for 'addon installed' message to appear 
+                                &#8594 click install from the repository &#8594 slyguy repository 
+                            </div>
+                            <p>
+                                (There is a lot of stuff here worth checking out again) 
+                            </p>
+                            <div class="subsection-directions">
+                                &#8594 Scroll down to viedo addons &#8594 CuriosityStream &#8594 inatall &#8594 
+                                click the fiest version &#8594 ok &#8594  wait for 'curiosity addon installed' message 
+                                to apear &#8594 if message appears about some Disney stuff: NO
+                            </div>
+                        </p>
+                        <div class="subsection-header">
+                           <h3>
+                               My Kodi addons
+                           </h3> 
+                        </div>
+                           <dt>The Crew</dt>
+                           <dd>This is probably the best for general Movie/Tv downloader </dd>
+
+                           <dt>Asgard</dt>
+                           <dd>Think this is a pretty good Genera Movie/Tv downloader</dd>
+
+                           <dt>The Oath</dt>
+                           <dd>My favorite general Movie/Tv downloader at the moment</dd>
+
+                           <dt>Plex Tv</dt>
+                           <dd>80 free channels</dd>
+
+                           <dt>OPB</dt>
+                           <dd>All the different Public brocastings</dd>
+
+                           <dt>YouTube</dt>
+                           <dd>straight up Youtube</dd>
+                        <div class="subsection-header">
+                            <h3>
+                                YouTube add-on API config.
+                            </h3>
+                            <p>
+                                In order for the YouTube addon to work we need generate and copy a API key, ID,
+                                and secret into 
+                            </p>
+                            <div class="subsection-directions">
+                                Kodi &#8594 Youtube addon &#8594 settings &#8594 API
+                            </div>
+                            <p>
+                                We will manage the API keys through <a href="console.cloud.google.com">console.cloud.google.com</a>
+                                Create a project called MyYoutubeAPI and enable the YouTube Data API v3.
+                            </p>
+                            <p>
+                                Follow the tutorial here <a href="https://www.youtube.com/watch?v=J6dFJVLKQ2s&t=5s">YouTube API Tutorial</a> 
+                                to create an youtubeApi project. 
+                            </p>
+                            <p>
+                                In this tutorial we 
+                                <ul>
+                                    <li> create a project in our <b>google.cloud?</b> </li>
+                                    <li> Enable Youtube Data API for project </li>
+                                    <li> generate an api key,  </li>
+                                    <li> generate OAuth Client id and seceret </li>
+                                </ul>
+                            </p>
+                            <p>
+                                Then, follow the tutorial here 
+                                <a href="https://www.claudiokuenzler.com/blog/1032/how-to-watch-youtube-on-kodi-solve-403-error-google-sign-in">solve 403 error tutorial</a>
+                                to fix the inevitable 403 error on second google sign in; 
+                                If attempting to sign in to YouTube..
+                            </p>
+                            <p>
+                                In this tutorial we 
+                                <ul>
+                                    <li> configure the api config warning to restrict api key to just youtube</li>
+                                    <li> change publishing status of App form testing to publish</li>
+                                </ul>
+                            </p>
+                            <p>
+                                All the keys and client ids are kept in a file called youtubeApi.txt
+                            </p>
+
+                        </div>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="important_directories">
+                        <div class="section-header">
+                            <h2>Important Directories</h2>
+                        </div>
+                        <ul>
+                            <li>
+                                /boot/config.txt
+                            </li>
+                            <li>
+                                /opt/
+                            </li>
+                            <li>
+                                /home/pi
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="collection_statistics">
+                        <div class="section-header">
+                           <h2> Collection Stats </h3> 
+                        </div>
+                        <table>
+                            <tr>
+                                <th> System </th>
+                                <th> Games </th>
+                                <th> Size </th>
+                            </tr>
+                            <tr>
+                                <td> Atari 2600 </td>
+                                <td> 575 </td>
+                                <td>4.5 MB</td>
+                            </tr>
+                            <tr>
+                                <td> Atari 5200 </td>
+                                <td> 104 </td>
+                                <td>1.2 MB</td>
+                            </tr>
+                            <tr>
+                                <td> Atari 7800 </td>
+                                <td> 51 </td>
+                                <td>?</td>
+                            </tr>
+                            <tr>
+                                <td> Atari Lynx </td>
+                                <td> 85 </td>
+                                <td>19 MB</td>
+                            </tr>
+                            <tr>
+                                <td> Famicom Disc System </td>
+                                <td> 378 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> SG-1000</td>
+                                <td> 68 </td>
+                                <td> 1.3 MB </td>
+                            </tr>
+                            <tr>
+                                <td> Sega MasterSystem </td>
+                                <td> 114 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Sega Megadrive/Genesis </td>
+                                <td> 941 </td>
+                                <td> 615 MB </td>
+                            </tr>
+                            <tr>
+                                <td> Sega 32x </td>
+                                <td> 37 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Sega DreamCast </td>
+                                <td> ? </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Nintendo 64 </td>
+                                <td> 257 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Nintendo Entertainment System </td>
+                                <td> 847 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Super Nintendo </td>
+                                <td> 778 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Neo-Geo </td>
+                                <td> 119 </td>
+                                <td> 2.3 GB </td>
+                            </tr>
+                            <tr>
+                                <td> PC-Engine/TurboGraphics</td>
+                                <td> 342 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Playstation 1</td>
+                                <td> 222 </td>
+                                <td> 80 GB</td>
+                            </tr>
+                            <tr>
+                                <td> Vectrex </td>
+                                <td> 23 </td>
+                                <td> 128 KB </td>
+                            </tr>
+                            <tr>
+                                <td> Nintendo VirtualBoy </td>
+                                <td> 31 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Super Nintendo </td>
+                                <td> 778 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> GameGear </td>
+                                <td> 396 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> GameBoy </td>
+                                <td> 618 </td>
+                                <td> 126 MB </td>
+                            </tr>
+                            <tr>
+                                <td> GameBoy Advance </td>
+                                <td> 163 </td>
+                                <td> 838 MB </td>
+                            </tr>
+                            <tr>
+                                <td> GameBoy Color</td>
+                                <td> 535 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> Neo-Geo Pocket Color </td>
+                                <td> 40 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> WonderSwan </td>
+                                <td> 112 </td>
+                                <td> ? </td>
+                            </tr>
+                            <tr>
+                                <td> WonderSwan Color </td>
+                                <td> 95 </td>
+                                <td> ? </td>
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="main-section" id="definitions">
+                        <div class="section-header">
+                            <h2>Definitions</h2>
+                        </div>
+
+                        <dt>addon (Kodi)</dt>
+                        <dd>
+                            Program or app installed within Kodi. They host the content that users stream
+                            on their device.
+                        </dd>
+                        <dt>ApplePi Baker</dt>
+                        <dd>
+                            This application is for MacOS X only and allows you to prepare an SD-Card for use with
+                            Raspberry Pi’s NOOBS, and it allows you to “flash” and IMG file to an SD-Card.
+                        </dd>
+                        <dt> ArcOS</dt>
+                        <dd>
+                            a Linux distribution based on Arch Linux, designed primarily for hosting web sites and
+                            services on cheap ARM-based devices such as Raspberry Pi
+                        </dd>
+                        <dt>BIOS</dt>
+                        <dd>
+                            "Basic Input/Output System" In most classic system is the firmware that
+                            bootstraps the user software (cartdridges).
+                        </dd>
+                        <dt>EmulationStation</dt>
+                        <dd>
+                            The official front-end of RetroPi project; a game launcher with controler/key
+                            support, themes, scrapers, game metadata.
+                        </dd>
+                        <dt>Etcher.io</dt>
+                        <dd>
+                            Etcher can quickly flash an operating system into an SD card. Etcher is used
+                            for writing image files zipped folders creating USB flash drives that are
+                            bootable.
+                        </dd>
+                        <dt>flashing</dt>
+                        <dd>
+                            To put an OS onto an SD card.
+                        </dd>
+                        <dt>gamelists</dt>
+                        <dd>
+                            xml file with all the game meta data and links to each games artwork.
+                        </dd>
+                        <dt> kodi </dt>
+                        <dd>
+                            Free and open-source media player software application
+                        </dd>
+                        <dt> Libretro </dt>
+                        <dd>
+                            An API.. A program is converted
+                            to a library file ‘libretro core’. A frontend (RetroArch)
+                            that supports the API can load an run the core.
+                            The frontend’s responsibility is to provide  implem. specif.
+                            details like  video/audio/input drivers.
+                            The libretro core’s responsibility is solely to provide the
+                            main program.
+                        </dd>
+                        <dt> meta-key </dt>
+                        <dd>
+                            To access RetroArch from Emulationstation. Manage saves, controlers, reatart
+                            system.
+                        </dd>
+                        <dt> overclock </dt>
+                        <dd>
+                            run processor at a higher speed  than intended by manifacture.
+                        </dd>
+                        <dt> Raspberry Pi </dt>
+                        <dd>
+                            A series of small single-board computer from the UK.
+                        </dd>
+                        <dt> Raspberry OS </dt> 
+                        <dd>
+                            Formally Raspbian, a Debian-based OS for the Pi.
+                        </dd> 
+                        <dt> Real Debrid </dt>
+                        <dd>
+                            Is a subscription service that provides access to additional file hosters.
+                        </dd>
+                        <dt> RetroArch </dt> 
+                        <dd>
+                            A front-end for emulators (libretro), game engines, and media players.
+                        </dd>
+                        <dt> RetroPie </dt>
+                        <dd>
+                            A free linux distro OS for launching retro games, by packaging togeter
+                            things like EmulationStation and
+                        </dd>
+                        <dt> RetroArch </dt> 
+                        <dd>
+                            RetroArch is a frontend for emulators, game engines and media players
+                        </dd>
+                        <dt> ROMs </dt>
+                        <dd>
+                            "Read Only Memory"; The game files. The information in a cartrige. ie the
+                            game itself.
+                        </dd>
+                        <dt> SD card </dt>
+                        <dd>
+                            Portable memory
+                        </dd>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </row>
+</body>
+</html>
+
